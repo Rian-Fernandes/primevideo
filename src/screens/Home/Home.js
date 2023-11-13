@@ -4,6 +4,8 @@ import PrimeVideoLogo from "../../assets/prime_video.png"
 import AmazonLogo from "../../assets/amazon_logo.png"
 import MovieTheWhell from "../../assets/movies/the_wheel_of_time.png"
 import { MOVIESWATCHING } from "../../utils/moviesWatching"
+import { MOVIESWATCH } from "../../utils/moviesWatch"
+import { MOVIESCRIME } from "../../utils/moviesCrimes"
 import { MoviesCard } from "../../components/MoviesCard/MoviesCard";
 
 export const Home = () =>{
@@ -28,7 +30,7 @@ return (
                 <Text style={styles.categoryText}>Kids</Text>
             </TouchableOpacity>
         </View>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false} style={styles.contentMovies}>
         <TouchableOpacity style={styles.movieImageThumbnail}>
             <Image source={MovieTheWhell} style={styles.movieImage}/>
         </TouchableOpacity>
@@ -43,9 +45,9 @@ return (
             showsHorizontalScrollIndicator={false}
         />
 
-<Text style={styles.movieText}>Continue Watching</Text>
+    <Text style={styles.movieText}>Crime Movies</Text>
         <FlatList
-            data={MOVIESWATCHING}
+            data={MOVIESCRIME}
             keyExtractor={(item) => item.id}
             renderItem={({item}) => <MoviesCard movieUrl={item.moviesURL}/>}
             horizontal
@@ -53,9 +55,9 @@ return (
             showsHorizontalScrollIndicator={false}
         />
 
-<Text style={styles.movieText}>Continue Watching</Text>
+<Text style={styles.movieText}>Watch in your language</Text>
         <FlatList
-            data={MOVIESWATCHING}
+            data={MOVIESWATCH}
             keyExtractor={(item) => item.id}
             renderItem={({item}) => <MoviesCard movieUrl={item.moviesURL}/>}
             horizontal
@@ -107,5 +109,7 @@ const styles = StyleSheet.create({
     },
     contentList:{
         paddingRight: 30,
-    }
+    },
+
+    contentMovies:{},
 })
