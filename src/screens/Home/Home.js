@@ -2,6 +2,7 @@ import {StyleSheet, Text, View, Image, TouchableOpacity} from "react-native";
 
 import PrimeVideoLogo from "../../assets/prime_video.png"
 import AmazonLogo from "../../assets/amazon_logo.png"
+import MovieTheWhell from "../../assets/movies/the_wheel_of_time.png"
 
 export const Home = () =>{
 return (
@@ -10,6 +11,7 @@ return (
             <Image style={styles.primeLogoImg} source = {PrimeVideoLogo}/>
             <Image style={styles.AmazonLogoImg} source = {AmazonLogo}/>
         </View>
+
         <View style={styles.category}>
             <TouchableOpacity>
                 <Text style={styles.categoryText}>Home</Text>
@@ -24,6 +26,11 @@ return (
                 <Text style={styles.categoryText}>Kids</Text>
             </TouchableOpacity>
         </View>
+
+        <TouchableOpacity style={styles.movieImageThumbnail}>
+            <Image source={MovieTheWhell} style={styles.movieImage}/>
+        </TouchableOpacity>
+
     </View>
 )
 }
@@ -59,5 +66,10 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: "700",
         color: "#FFF"
-    }
+    },
+
+    movieImageThumbnail:{
+        width:"100%",
+        alignItems: "Center",
+    },
 })
